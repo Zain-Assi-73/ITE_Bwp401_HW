@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ar">
+   
+
+<head>
+           
+    <meta charset="UTF-8">
+           
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+            <title>تفاصيل الفعالية </title>
+       
+</head>
+   
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom ">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="index.html">
+                    دليل فعاليات الجامعة الافتراضية
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li>
+                        <li class="nav-item"><a class="nav-link" href="events.html">جميع الفعاليات</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="about.html">عن الدليل</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">اتصل بنا</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+             
+            <h1 class=" section-title m-4">تفاصيل الفعالية </h1>
+    <section class="container my-5 " id="event-details">
+        <h2 class="m-4">ندوة الذكاء الاصطناعي</h2>
+<div class="details">
+           <p><strong>التصنيف:</strong> تكنولوجيا</p>
+        <p><strong>التاريخ:</strong> 15 نوفمبر 2026</p>
+        <p><strong>المكان:</strong> أونلاين (منصة الجامعة)</p>
+        <p><strong>الوصف:</strong> عرض أحدث تطبيقات الويب المدمجة مع نماذج الذكاء الاصطناعي في التعليم.</p>
+
+     
+
+
+        <div class="event-description my-4" id="event-description"></div>
+</div>
+
+        <div class="row g-3 my-4" id="event-images"></div>
+
+    </section>
+    <div class="m-5">
+        <button class="btn btn-custom" onclick="addToCalendar()">
+        أضف للتقويم
+    </button>
+
+    <button class="btn btn-custom" onclick="shareEvent()">
+        شارك
+    </button>
+    <a href="events.html" class="btn btn-custom">العودة إلى قائمة الفعاليات</a>
+     
+    </div>
+    
+    <section class="container my-5">
+        <h2 class="section-title">فعاليات ذات صلة</h2>
+        <div class="row g-4" id="related-events">
+ </div>
+    </section>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const eventId = params.get("id");
+
+        const events = {
+            ai: {
+                title: "ندوة الذكاء الاصطناعي",
+                category: "تكنولوجيا",
+                date: "15 نوفمبر 2026",
+                place: "أونلاين (منصة الجامعة)",
+                description: "عرض أحدث تطبيقات الويب المدمجة مع نماذج الذكاء الاصطناعي في التعليم",
+                longDescription: "تتناول الندوة دور الذكاء الاصطناعي في تقديم محتوى تعليمي تفاعلي تتيح الندوة للمشاركين فرصة التعرف على أبرز الاستخدمات التعليمية لهذه التطبيقات ومناقشة فوائدها والتحديات المرتبطة بها بما في ذلك دقة المعلومات وحماية خصوصية المستخدمي",
+                images: ["assets/img/photo_2026-10-26_21-49-59.jpg",
+                    "assets/img/photo_2026-10-26_21-50-08.jpg"
+                ],
+                related: ["programming", "research"]
+            },
+
+            languages: {
+                title: "تعلم اللغات واللهجات",
+                category: "ثقافة",
+                date: "20 نوفمبر 2026",
+                place: "المكتبة الجامعية",
+                description: "فعالية تهدف إلى التعرف على لغات وثقافات جديدة، واكتشاف تنوع اللهجات وأساليب التواصل بين المجتمعات.",
+                longDescription: "تعد هذه الندوة نافذة تفاعلية تشلط الضوء على الفارق الجوهري بين اكتساب اللغة كقواعد وأسسوبين تفكيك اللهجات التيتعكس هوية الشعوب وثقافتها ",
+                images: [
+                    "assets/img/photo_2026-10-31_20-43-06.jpg",
+                    "assets/img/photo_2026-10-26_21-50-01.jpg"
+                ],
+                related: ["chess", "research"]
+
+            },
+
+            chess: {
+                title: "بطولة الشطرنج الإلكترونية",
+                category: "رياضة",
+                date: "25 نوفمبر 2026",
+                place: "الجمعية المركزية / أونلاين",
+                description: "بطولة إلكترونية تتيح للمشاركين اختبار مهاراتهم في الشطرنج والتنافس في أجواء ممتعة.",
+                longDescription: `<p>تهدف هذه الفعالية إلى تنمية مهارات التفكير المنطقي والتركيز والتخطيط لدى المشاركين من خلال مباريات تنافسية تجمع طلاب الجامعة في أجواء مليئة بالحماس والتحدي </p>`,
+                images: [
+                    "assets/img/photo_2026-10-26_21-50-03.jpg",
+                    "assets/img/photo_2026-10-31_20-43-06 (3).jpg"
+                ],
+                related: ["languages", "music"]
+            },
+
+            music: {
+                title: "أمسية الموسيقى الكلاسيكية",
+                category: "موسيقى",
+                date: "1 ديسمبر 2026",
+                place: "القاعة الرئيسية A",
+                description: "أمسية للتعرف على الموسيقى الكلاسيكية والاستمتاع بأجوائها وأعمالها الموسيقية المميزة.",
+                longDescription: `<p> تهدف الأمسية إلى تعريف الطلاب بعالم الموسيقى الكلاسيكية وأبرز مؤلفيهاوأعمالها الموسيقية </p>
+            <p> تتضمن الأمسية الاستماع إلى مقطوعات موسيقية متنوعة والتعرف على الآلات الموسيقية والاستماع بأجواء فنية وثقافية مميزة </p>`,
+                images: [
+                    "assets/img/photo_2026-11-01_18-40-52.jpg",
+                    "assets/img/photo_2026-11-01_18-40-26.jpg"
+                ],
+                related: ["chess", "research"]
+            },
+
+            programming: {
+                title: "حل مشكلات برمجية",
+                category: "تكنولوجيا",
+                date: "5 ديسمبر 2026",
+                place: "أونلاين",
+                description: "فعالية تهدف إلى تنمية مهارات التفكير المنطقي وحل المشكلات البرمجية.",
+                longDescription: `<p>نهدف هذه الفعالية إلى مساعدة الطلاب على تطوير مهاراتهم في التفكير المنطقي  والتحليل والتعرف على طرق التعامل مع التحديات البرمجية المختلفة  </p>
+             <p>تتضمن الفعالية مجموعة من التمارين والتحديات البرمجية التي تساعد المشاركين على كتابة الأكوادواكتشاف الأخطاء وإيجاد الحلول المناسبة وبالإضافة إلى تبادل</p>`,
+                images: ["assets/img/photo_2026-10-31_20-26-58.jpg",
+                    "assets/img/photo_2026-10-31_20-20-04.jpg"
+                ],
+                related: ["ai", "research"]
+            },
+
+            research: {
+                title: "ورشة البحث العلمي",
+                category: "ثقافة",
+                date: "10 ديسمبر 2026",
+                place: "الجمعية المركزية",
+                description: "ورشة للتعرف على أساسيات البحث العلمي وطرق جمع المعلومات وتنظيمها.",
+                longDescription: `<p>تهدف هذه الفعالية إلى تطوير مهارات الطلاب في إعداد البحوث الأكاديمية وتتناول الورشة طرق جمع البيانات وتحليلها وتنظيم الأفكار </p>`,
+                images: ["assets/img/photo_2026-10-31_20-32-28.jpg",
+                    "assets/img/photo_2026-10-31_20-43-06 (2).jpg"
+                ],
+                related: ["ai", "programming"]
+            },
+        };
+
+        const event = events[eventId] || events.ai;
+
+        const longDescriptionContainer = document.getElementById("event-description");
+
+        longDescriptionContainer.innerHTML = event.longDescription || event.description;
+        const imagesContainer = document.getElementById("event-images");
+
+        imagesContainer.innerHTML = "";
+        const relatedContainer = document.getElementById("related-events");
+
+        relatedContainer.replaceChildren();
+
+        for (let i = 0; i < event.related.length; i++) {
+
+            const id = event.related[i];
+            const related = events[id];
+
+            const column = document.createElement("div");
+            column.className = "col-md-6";
+
+            column.innerHTML =
+                '<div class="event-card p-3 h-100">' +
+                '<h3>' + related.title + '</h3>' +
+                '<p>التاريخ: ' + related.date + '</p>' +
+                '<a href="event.html?id=' + id + '" class="btn btn-custom">عرض التفاصيل</a>' +
+                '</div>';
+
+            relatedContainer.appendChild(column);
+        }
+        event.images.forEach(function (imagePath) {
+            const column = document.createElement("div");
+            column.className = "col-md-6";
+
+            const img = document.createElement("img");
+            img.src = imagePath;
+            img.alt = event.title;
+            img.className = "img-fluid rounded w-100";
+            img.style.height = "250px";
+            img.style.objectFit = "cover";
+
+            column.appendChild(img);
+            imagesContainer.appendChild(column);
+        });
+
+        const section = document.getElementById("event-details");
+
+        section.querySelector("h2").textContent = event.title;
+
+        const paragraphs = section.querySelectorAll("p");
+
+        paragraphs[0].innerHTML = "<strong>التصنيف:</strong> " + event.category;
+        paragraphs[1].innerHTML = "<strong>التاريخ:</strong> " + event.date;
+        paragraphs[2].innerHTML = "<strong>المكان:</strong> " + event.place;
+        paragraphs[3].innerHTML = "<strong>الوصف:</strong> " + event.description;
+    </script>
+</body>
+
+ <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row g-4 text-center text-md-start">
+                
+                <div class="col-12 col-md-4">
+                    <h5>دليل الفعاليات</h5>
+                    <p class="small text-white-50 mb-2">المنصة الشاملة لاستعراض ومتابعة أحدث الأنشطة والفعاليات في الجامعة الافتراضية السورية.</p>
+                    <p class="small mb-1">t_balkhatib@svuonline.org</p>
+                    <p class="small">+963 11 1234567</p>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4">
+                    <h5>روابط سريعة</h5>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="index.html">الرئيسية</a></li>
+                        <li class="mb-2"><a href="events.html">جميع الفعاليات</a></li>
+                        <li class="mb-2"><a href="contact.html">صفحة اتصل بنا</a></li>
+                        <li class="mb-2"><a href="about.html">عن الدليل</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4">
+                    <h5>روابط التواصل الاجتماعي</h5>
+                    <p class="small text-white-50 mb-3">تواصل معنا عبر حساباتنا الرسمية للاطلاع على جديد الفعاليات:</p>
+                    <div class="social-links d-flex justify-content-center justify-content-md-start">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row footer-bottom text-center align-items-center">
+                <div class="col-12 col-md-6 text-md-start mb-2 mb-md-0">
+                    <small>© 2026 جميع الحقوق محفوظة - الجامعة الافتراضية السورية SVU</small>
+                </div>
+                <div class="col-12 col-md-6 text-md-end">
+                    <small class="text-white-50">مشروع مادة BWP401 - إشراف د. باسل الخطيب</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>

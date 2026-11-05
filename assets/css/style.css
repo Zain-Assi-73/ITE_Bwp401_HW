@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
+
+body {
+    font-family: 'Cairo',   sans-serif;
+    background-color: #f8f9fa;
+    color: #1B262C;
+    direction: rtl;
+    text-align: right;
+}
+
+/* Navbar */
+.navbar-custom {
+    background-color: #1B262C;
+    border-bottom: 3px solid #3282B8;
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .nav-link {
+    color:#BBE1FA ;
+}
+
+.navbar-custom .nav-link:hover,
+.navbar-custom .nav-link.active {
+    color: #ffffff ;
+    font-weight: bold;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg,#1B262C ,#0F4C75);
+    color: #ffffff;
+    padding: 3rem 1rem;
+    border-bottom: 4px solid #3282B8;
+}
+
+.hero-section h1 {
+    color:#BBE1FA ;
+}
+
+/* Section Titles */
+.section-title {
+    color: #0F4C75;
+    border-bottom: 2px solid #3282B8;
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+/* Category Badges */
+.category-btn {
+    background-color: #0F4C75;
+    color:#BBE1FA ;
+    border: 1px solid #3282B8;
+    padding: 8px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.category-btn:hover {
+    background-color: #3282B8;
+    color: #ffffff;
+}
+
+/* Team Card */
+.team-card {
+    border: 1px solid#3282B8;
+    background-color: #ffffff;
+    border-radius: 8px;
+}
+
+.team-badge {
+    background-color:#0F4C75;
+    color:#BBE1FA ;
+}
+
+/* Event Cards */
+.event-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #ffffff;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.event-card .card-img-top {
+    height: 190px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.badge-category {
+    background-color: #0F4C75;
+    color: #BBE1FA;
+}
+
+.btn-custom {
+    background-color: #3282B8;
+    color: #ffffff;
+    border: none;
+    font-weight: 600;
+}
+
+.btn-custom:hover {
+    background-color: #BBE1FA;
+    color: #3282B8;
+}
+
+/* Filter Box */
+.filter-box {
+    background-color: #0F4C75;
+    color: #BBE1FA;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+/* Footer */
+footer {
+    background-color:#1B262C;
+    color: #3282B8;
+    padding-top: 2.5rem;
+    padding-bottom: 1rem;
+    margin-top: 3.5rem;
+    border-top: 3px solid #3282B8;
+}
+
+footer h5 {
+    color: #ffffff;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+footer a {
+    color: #BBE1FA;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: #0F4C75;
+    color:#BBE1FA;
+    border-radius: 50%;
+    margin-left: 6px;
+    font-size: 1rem;
+    text-decoration: none;
+
+}
+
+.social-links a:hover {
+    background-color: #3282B8;
+    color: #ffffff;
+       text-decoration: none;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1rem;
+    margin-top: 2rem;
+}
+
+/* Contact Page */
+.contact-form-card {
+    border: none;
+    border-top: 4px solid #3282B8;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(15, 76, 117, 0.08);
+}
+
+.contact-form-card .form-label {
+    font-weight: 600;
+    color: #0F4C75;
+}
+
+.contact-form-card .input-group-text {
+    width: 46px;
+    justify-content: center;
+    background-color: #BBE1FA;
+    color: #0F4C75;
+}
+
+.contact-form-card .form-control:not(.is-invalid):focus {
+    border-color: #3282B8;
+    box-shadow: 0 0 0 0.2rem rgba(50, 130, 184, 0.25);
+}
+
+.contact-info-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-info-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+}
+
+.contact-info-card a {
+    color: #3282B8;
+    text-decoration: none;
+}
+
+.contact-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #0F4C75;
+    color: #BBE1FA;
+    font-size: 1.1rem;
+}
+.alert{
+    color: green;
+}
+.err{
+    color: red;
+}
+.about{
+    background-color: #0F4C75;
+    color:#BBE1FA ;
+}
+.about h3{
+    color: #3282B8;
+}
+.team{
+    border-top: 6px solid #3282B8;
+}
+.team h4{
+    color: #0F4C75;
+}
+.details{
+    background-color: #BBE1FA;
+    padding: 7px;
+    border-radius: 12px;
+}
+.details p,div{
+    color: #0F4C75;
+}
+.slider{
+    width: 700px;
+    margin: auto;
+}
+.carousel-item img {
+  height: 340px; 
+ width: 100%;
+}
+
